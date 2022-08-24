@@ -1,0 +1,81 @@
+﻿@model IEnumerable<CAPA_DATOS.ClIENTES>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container container-fluid">
+    <h2>Listado de Clientes</h2>
+
+    <p>
+        <a href="@Url.Action("Create", "ClIENTES")" class="btn btn-primary btn-sm">Nuevo Registro</a>
+    </p>
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    <p class="text-left"><strong>Nombres</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Documento</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Email</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Teléfono</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Dirección</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Dirección de Instalación</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Estado</strong></p>
+                </th>
+                <th>
+                    <p class="text-left"><strong>Tipo Identificación</strong></p>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero_Identificacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Correo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion_Instalacion)
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.estado)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TIPO_IDENTIFICACION.Nombre)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id_Cliente }) |
+                        <a title="Eliminar" onclick="return confirm('Esta seguro que desea eliminar el registro?');" href="~/CLIENTES/Delete/@item.Id_Cliente">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

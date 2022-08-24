@@ -1,0 +1,12 @@
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\CAPA_DATOS.dll.config
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\CAPA_DATOS.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\CAPA_DATOS.pdb
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\EntityFramework.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\EntityFramework.xml
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\obj\Debug\CAPA_DATOS.csproj.CoreCompileInputs.cache
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\obj\Debug\CAPA_DATOS.csproj.CopyComplete
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\obj\Debug\CAPA_DATOS.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\obj\Debug\CAPA_DATOS.pdb
+C:\Users\Stevens\source\repos\CLARO\CAPA_DATOS\obj\Debug\CAPA_DATOS.csprojAssemblyReference.cache

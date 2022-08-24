@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CLAROModelStoreContainer" CdmEntityContainer="CLAROEntities1">
+    <EntitySetMapping Name="ClIENTES">
+      <EntityTypeMapping TypeName="CLAROModel.ClIENTES">
+        <MappingFragment StoreEntitySet="ClIENTES">
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Numero_Identificacion" ColumnName="Numero_Identificacion" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Direccion_Instalacion" ColumnName="Direccion_Instalacion" />
+          <ScalarProperty Name="Id_Tipo_Identificacion" ColumnName="Id_Tipo_Identificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_IDENTIFICACION">
+      <EntityTypeMapping TypeName="CLAROModel.TIPO_IDENTIFICACION">
+        <MappingFragment StoreEntitySet="TIPO_IDENTIFICACION">
+          <ScalarProperty Name="Id_Tipo_Identificacion" ColumnName="Id_Tipo_Identificacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateClienteEstado" FunctionName="CLAROModel.Store.UpdateClienteEstado" />
+  </EntityContainerMapping>
+</Mapping>

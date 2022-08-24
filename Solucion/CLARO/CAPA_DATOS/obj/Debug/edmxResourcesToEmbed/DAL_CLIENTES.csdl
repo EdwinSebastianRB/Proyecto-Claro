@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CLAROModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ClIENTES">
+    <Key>
+      <PropertyRef Name="Id_Cliente" />
+    </Key>
+    <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Numero_Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion_Instalacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Tipo_Identificacion" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TIPO_IDENTIFICACION" Relationship="Self.FK__ClIENTES__Id_Tip__38996AB5" FromRole="ClIENTES" ToRole="TIPO_IDENTIFICACION" />
+  </EntityType>
+  <EntityType Name="TIPO_IDENTIFICACION">
+    <Key>
+      <PropertyRef Name="Id_Tipo_Identificacion" />
+    </Key>
+    <Property Name="Id_Tipo_Identificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClIENTES" Relationship="Self.FK__ClIENTES__Id_Tip__38996AB5" FromRole="TIPO_IDENTIFICACION" ToRole="ClIENTES" />
+  </EntityType>
+  <Association Name="FK__ClIENTES__Id_Tip__38996AB5">
+    <End Role="TIPO_IDENTIFICACION" Type="Self.TIPO_IDENTIFICACION" Multiplicity="1" />
+    <End Role="ClIENTES" Type="Self.ClIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_IDENTIFICACION">
+        <PropertyRef Name="Id_Tipo_Identificacion" />
+      </Principal>
+      <Dependent Role="ClIENTES">
+        <PropertyRef Name="Id_Tipo_Identificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CLAROEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClIENTES" EntityType="Self.ClIENTES" />
+    <EntitySet Name="TIPO_IDENTIFICACION" EntityType="Self.TIPO_IDENTIFICACION" />
+    <AssociationSet Name="FK__ClIENTES__Id_Tip__38996AB5" Association="Self.FK__ClIENTES__Id_Tip__38996AB5">
+      <End Role="TIPO_IDENTIFICACION" EntitySet="TIPO_IDENTIFICACION" />
+      <End Role="ClIENTES" EntitySet="ClIENTES" />
+    </AssociationSet>
+    <FunctionImport Name="UpdateClienteEstado">
+      <Parameter Name="Id_Cliente" Mode="In" Type="Int32" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Numero_Identificacion" Mode="In" Type="String" />
+      <Parameter Name="Correo" Mode="In" Type="String" />
+      <Parameter Name="Telefono" Mode="In" Type="String" />
+      <Parameter Name="Direccion" Mode="In" Type="String" />
+      <Parameter Name="Direccion_Instalacion" Mode="In" Type="String" />
+      <Parameter Name="Id_Tipo_Identificacion" Mode="In" Type="Int32" />
+      <Parameter Name="estado" Mode="In" Type="Boolean" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

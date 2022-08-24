@@ -1,0 +1,12 @@
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\CAPA_NEGOCIO.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\CAPA_NEGOCIO.pdb
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\obj\Debug\CAPA_NEGOCIO.csprojAssemblyReference.cache
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\obj\Debug\CAPA_NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\obj\Debug\CAPA_NEGOCIO.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\obj\Debug\CAPA_NEGOCIO.pdb
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\CAPA_DATOS.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\EntityFramework.dll
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\CAPA_DATOS.pdb
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\CAPA_DATOS.dll.config
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\bin\Debug\EntityFramework.xml
+C:\Users\Stevens\source\repos\CLARO\CAPA_NEGOCIO\obj\Debug\CAPA_NEGOCIO.csproj.CopyComplete

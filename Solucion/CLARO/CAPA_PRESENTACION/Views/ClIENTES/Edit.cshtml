@@ -1,0 +1,94 @@
+﻿@model CAPA_DATOS.ClIENTES
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Modificar Cliente</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id_Cliente)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Numero_Identificacion, "Identificación", htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.EditorFor(model => model.Numero_Identificacion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Numero_Identificacion, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Correo, htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefono, "Teléfono", htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Direccion, "Dirección", htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Direccion_Instalacion, "Dirección de instalación", htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.EditorFor(model => model.Direccion_Instalacion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Direccion_Instalacion, "", new { @class = "text-danger" })
+        </div>
+
+        @Html.LabelFor(model => model.Id_Tipo_Identificacion, "Tipo Identificación", htmlAttributes: new { @class = "control-label col-sm-3" })
+        <div class="col-sm-3">
+            @Html.DropDownList("Id_Tipo_Identificacion", null, "Seleccione...", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Id_Tipo_Identificacion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.estado, "Estado", htmlAttributes: new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.estado)
+                @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

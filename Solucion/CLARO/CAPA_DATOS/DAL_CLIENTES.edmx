@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CLAROModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClIENTES">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="150" />
+          <Property Name="Numero_Identificacion" Type="varchar" MaxLength="20" />
+          <Property Name="Correo" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="varchar" MaxLength="30" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="Direccion_Instalacion" Type="varchar" MaxLength="100" />
+          <Property Name="Id_Tipo_Identificacion" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TIPO_IDENTIFICACION">
+          <Key>
+            <PropertyRef Name="Id_Tipo_Identificacion" />
+          </Key>
+          <Property Name="Id_Tipo_Identificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__ClIENTES__Id_Tip__38996AB5">
+          <End Role="TIPO_IDENTIFICACION" Type="Self.TIPO_IDENTIFICACION" Multiplicity="1" />
+          <End Role="ClIENTES" Type="Self.ClIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_IDENTIFICACION">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Principal>
+            <Dependent Role="ClIENTES">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ClIENTES__Id_Tip__3E52440B">
+          <End Role="TIPO_IDENTIFICACION" Type="Self.TIPO_IDENTIFICACION" Multiplicity="1" />
+          <End Role="ClIENTES" Type="Self.ClIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_IDENTIFICACION">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Principal>
+            <Dependent Role="ClIENTES">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="UpdateClienteEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id_Cliente" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Numero_Identificacion" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="Telefono" Type="varchar" Mode="In" />
+          <Parameter Name="Direccion" Type="varchar" Mode="In" />
+          <Parameter Name="Direccion_Instalacion" Type="varchar" Mode="In" />
+          <Parameter Name="Id_Tipo_Identificacion" Type="int" Mode="In" />
+          <Parameter Name="estado" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="CLAROModelStoreContainer">
+          <EntitySet Name="ClIENTES" EntityType="Self.ClIENTES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_IDENTIFICACION" EntityType="Self.TIPO_IDENTIFICACION" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ClIENTES__Id_Tip__38996AB5" Association="Self.FK__ClIENTES__Id_Tip__38996AB5">
+            <End Role="TIPO_IDENTIFICACION" EntitySet="TIPO_IDENTIFICACION" />
+            <End Role="ClIENTES" EntitySet="ClIENTES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ClIENTES__Id_Tip__3E52440B" Association="Self.FK__ClIENTES__Id_Tip__3E52440B">
+            <End Role="TIPO_IDENTIFICACION" EntitySet="TIPO_IDENTIFICACION" />
+            <End Role="ClIENTES" EntitySet="ClIENTES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CLAROModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClIENTES">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Numero_Identificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion_Instalacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Tipo_Identificacion" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TIPO_IDENTIFICACION" Relationship="Self.FK__ClIENTES__Id_Tip__38996AB5" FromRole="ClIENTES" ToRole="TIPO_IDENTIFICACION" />
+        </EntityType>
+        <EntityType Name="TIPO_IDENTIFICACION">
+          <Key>
+            <PropertyRef Name="Id_Tipo_Identificacion" />
+          </Key>
+          <Property Name="Id_Tipo_Identificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ClIENTES" Relationship="Self.FK__ClIENTES__Id_Tip__38996AB5" FromRole="TIPO_IDENTIFICACION" ToRole="ClIENTES" />
+        </EntityType>
+        <Association Name="FK__ClIENTES__Id_Tip__38996AB5">
+          <End Role="TIPO_IDENTIFICACION" Type="Self.TIPO_IDENTIFICACION" Multiplicity="1" />
+          <End Role="ClIENTES" Type="Self.ClIENTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_IDENTIFICACION">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Principal>
+            <Dependent Role="ClIENTES">
+              <PropertyRef Name="Id_Tipo_Identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CLAROEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClIENTES" EntityType="Self.ClIENTES" />
+          <EntitySet Name="TIPO_IDENTIFICACION" EntityType="Self.TIPO_IDENTIFICACION" />
+          <AssociationSet Name="FK__ClIENTES__Id_Tip__38996AB5" Association="Self.FK__ClIENTES__Id_Tip__38996AB5">
+            <End Role="TIPO_IDENTIFICACION" EntitySet="TIPO_IDENTIFICACION" />
+            <End Role="ClIENTES" EntitySet="ClIENTES" />
+          </AssociationSet>
+          <FunctionImport Name="UpdateClienteEstado">
+            <Parameter Name="Id_Cliente" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Numero_Identificacion" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="Direccion_Instalacion" Mode="In" Type="String" />
+            <Parameter Name="Id_Tipo_Identificacion" Mode="In" Type="Int32" />
+            <Parameter Name="estado" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CLAROModelStoreContainer" CdmEntityContainer="CLAROEntities1">
+          <EntitySetMapping Name="ClIENTES">
+            <EntityTypeMapping TypeName="CLAROModel.ClIENTES">
+              <MappingFragment StoreEntitySet="ClIENTES">
+                <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Numero_Identificacion" ColumnName="Numero_Identificacion" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Direccion_Instalacion" ColumnName="Direccion_Instalacion" />
+                <ScalarProperty Name="Id_Tipo_Identificacion" ColumnName="Id_Tipo_Identificacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_IDENTIFICACION">
+            <EntityTypeMapping TypeName="CLAROModel.TIPO_IDENTIFICACION">
+              <MappingFragment StoreEntitySet="TIPO_IDENTIFICACION">
+                <ScalarProperty Name="Id_Tipo_Identificacion" ColumnName="Id_Tipo_Identificacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateClienteEstado" FunctionName="CLAROModel.Store.UpdateClienteEstado" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
